@@ -4,11 +4,11 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken
+    public class PecosPulledPork
     {
         private bool bread = true;
         /// <summary>
-        /// If the chicken has bread
+        /// If the pulled pork has bread
         /// </summary>
         public bool Bread
         {
@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
 
         private bool pickle = true;
         /// <summary>
-        /// If the chicken has pickles
+        /// If the pulled pork has pickles
         /// </summary>
         public bool Pickle
         {
@@ -27,29 +27,29 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The price of the chicken
+        /// The price of the pulled pork
         /// </summary>
         public double Price
         {
             get
             {
-                return 5.99;
+                return 5.88;
             }
         }
 
         /// <summary>
-        /// The calories of the chicken
+        /// The calories of the pulled pork
         /// </summary>
         public uint Calories
         {
             get
             {
-                return 190;
+                return 528;
             }
         }
 
         /// <summary>
-        /// Special instructions for the preparation of the chicken
+        /// Special instructions for the preparation of the pulled pork
         /// </summary>
         public List<string> SpecialInstructions
         {
