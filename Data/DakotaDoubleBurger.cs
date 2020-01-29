@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TrailBurger
+    public class DakotaDoubleBurger
     {
         private bool bun = true;
         /// <summary>
@@ -26,23 +26,38 @@ namespace CowboyCafe.Data
             set { pickle = value; }
         }
 
-        
+
         /// <summary>
         /// If the burger has ketchup
         /// </summary>
         public bool Ketchup { get; set; } = true;
-        
-        
+
+
         /// <summary>
         /// If the burger has mustard
         /// </summary>
         public bool Mustard { get; set; } = true;
 
-        
+
         /// <summary>
         /// If the burger has cheese
         /// </summary>
         public bool Cheese { get; set; } = true;
+
+        /// <summary>
+        /// If the burger has tomato
+        /// </summary>
+        public bool Tomato { get; set; } = true;
+
+        /// <summary>
+        /// If the burger has lettuce
+        /// </summary>
+        public bool Lettuce { get; set; } = true;
+
+        /// <summary>
+        /// If the burger has mayo
+        /// </summary>
+        public bool Mayo { get; set; } = true;
 
         /// <summary>
         /// The price of the burger
@@ -51,7 +66,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 4.50;
+                return 5.20;
             }
         }
 
@@ -62,7 +77,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 288;
+                return 464;
             }
         }
 
@@ -80,6 +95,9 @@ namespace CowboyCafe.Data
                 if (!Mustard) instructions.Add("hold mustard");
                 if (!pickle) instructions.Add("hold pickle");
                 if (!Cheese) instructions.Add("hold cheese");
+                if (!Tomato) instructions.Add("hold tomato");
+                if (!Lettuce) instructions.Add("hold lettuce");
+                if (!Mayo) instructions.Add("hold mayo");
 
                 return instructions;
             }
