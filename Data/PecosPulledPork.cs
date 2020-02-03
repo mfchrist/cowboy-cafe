@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CowboyCafe.Data
+namespace CowboyCafe.Data 
 {
     /// <summary>
     /// A class representing the Pecos Pulled Pork entree
     /// </summary>
-    public class PecosPulledPork
+    public class PecosPulledPork : Entree
     {
         private bool bread = true;
         /// <summary>
@@ -32,7 +32,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the pulled pork
         /// </summary>
-        public double Price
+        public override double Price 
         {
             get
             {
@@ -43,7 +43,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the pulled pork
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -54,7 +54,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the pulled pork
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
