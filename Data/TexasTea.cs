@@ -28,11 +28,11 @@ namespace CowboyCafe.Data
                     switch (Size)
                     {
                         case Size.Large:
-                            return 10;
+                            return 36;
                         case Size.Medium:
                             return 22;
                         case Size.Small:
-                            return 36;
+                            return 10;
                         default:
                             throw new NotImplementedException("Unknown Size");
 
@@ -43,11 +43,11 @@ namespace CowboyCafe.Data
                     switch (Size)
                     {
                         case Size.Large:
-                            return 5;
+                            return 18;
                         case Size.Medium:
                             return 11;
                         case Size.Small:
-                            return 18;
+                            return 5;
                         default:
                             throw new NotImplementedException("Unknown Size");
 
@@ -66,11 +66,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 1;
+                        return 2;
                     case Size.Medium:
                         return 1.5;
                     case Size.Small:
-                        return 2;
+                        return 1;
                     default:
                         throw new NotImplementedException("Unknown Price");
 
