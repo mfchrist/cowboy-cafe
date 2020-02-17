@@ -20,6 +20,11 @@ namespace CowboyCafe.Data
         public bool RoomForCream { get; set; } = false;
 
         /// <summary>
+        /// Determines if coffee is decaf, false by default.
+        /// </summary>
+        public bool Decaf { get; set; } = false;
+
+        /// <summary>
         /// Sets the calories of the drink
         /// </summary>
         public override uint Calories
