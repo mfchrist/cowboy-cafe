@@ -96,7 +96,14 @@ namespace CowboyCafe.Data
 
         public override string ToString()
         {
-            return "Texas Tea";
+            if (Sweet)
+            {
+                return Size.ToString() + " Texas Sweet Tea";
+            }
+            else
+            {
+                return Size.ToString() + " Texas Plain Tea";
+            }
         }
     }
 }

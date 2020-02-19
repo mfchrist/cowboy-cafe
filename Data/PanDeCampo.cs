@@ -52,7 +52,7 @@ namespace CowboyCafe.Data
 
         public override string ToString()
         {
-            return "Pan De Campo";
+            return Size.ToString() + " Pan de Campo";
         }
     }
 }

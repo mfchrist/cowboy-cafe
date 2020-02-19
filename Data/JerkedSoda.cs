@@ -71,7 +71,7 @@ namespace CowboyCafe.Data
 
         public override string ToString()
         {
-            return "Jerked Soda";
+            return Size.ToString() + " " + Enum.GetName(typeof(SodaFlavor), SodaFlavor.CreamSoda) + " Jerked Soda";
         }
     }
 }
