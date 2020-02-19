@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CowboyCafe.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,8 +21,103 @@ namespace PointOfSale
     {
         public OrderControl()
         {
+            //Initialize all buttons with an event handler.
             InitializeComponent();
-            AddAngryChickenButton.Height = 40;
+            //AddAngryChickenButton.Height = 40;
+            //entrees
+            AddCowpokeChili.Click += AddCowpokeChili_Click;
+            AddRustlerRibs.Click += AddRustlerRibs_Click;
+            AddPecosPulledPork.Click += AddPecosPulledPork_Click;
+            AddTrailBurger.Click += AddTrailBurger_Click;
+            AddDakotaDoubleBurger.Click += AddDakotaDoubleBurger_Click;
+            AddTexasTripleBurger.Click += AddTexasTripleBurger_Click;
+            AddAngryChickenButton.Click += AddAngryChicken_Click;
+            //sides
+            AddChiliCheeseFries.Click += AddChiliCheeseFries_Click;
+            AddCornDodgers.Click += AddCornDodgers_Click;
+            AddPanDeCampo.Click += AddPanDeCampo_Click;
+            AddBakedBeans.Click += AddBakedBeans_Click;
+            //drinks
+            AddJerkedSoda.Click += AddJerkedSoda_Click;
+            AddTexasTea.Click += AddTexasTea_Click;
+            AddCowboyCoffe.Click += AddCowboyCoffe_Click;
+            AddWater.Click += AddWater_Click;
         }
+
+        private void AddWater_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new Water());
+        }
+
+        private void AddCowboyCoffe_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new CowboyCoffee());
+        }
+
+        private void AddTexasTea_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new TexasTea());
+        }
+
+        private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new JerkedSoda());
+        }
+
+        private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new BakedBeans());
+        }
+
+        private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new PanDeCampo());
+        }
+
+        private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new CornDodgers());
+        }
+
+        private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new ChiliCheeseFries());
+        }
+
+        private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new DakotaDoubleBurger());
+        }
+
+        private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new TrailBurger());
+        }
+
+        private void AddRustlerRibs_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new RustlersRibs());
+        }
+
+        private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new TexasTripleBurger());
+        }
+
+        private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new PecosPulledPork());
+        }
+
+        private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new CowpokeChili());
+        }
+
+        private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.Items.Add(new AngryChicken());
+        }
+
     }
 }
