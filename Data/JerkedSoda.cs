@@ -69,9 +69,27 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Overiden ToString() method to return correct order information
+        /// </summary>
         public override string ToString()
         {
-            return Size.ToString() + " " + Enum.GetName(typeof(SodaFlavor), SodaFlavor.CreamSoda) + " Jerked Soda";
+            switch (Flavor)
+            {
+                case SodaFlavor.CreamSoda:
+                    return Size.ToString()  + " Cream Soda Jerked Soda";
+                case SodaFlavor.OrangeSoda:
+                    return Size.ToString() + " Orange Soda Jerked Soda";
+                case SodaFlavor.Sarsparilla:
+                    return Size.ToString() + " Sarsparilla Jerked Soda";
+                case SodaFlavor.BirchBeer:
+                    return Size.ToString() + " Birch Beer Jerked Soda";
+                case SodaFlavor.RootBeer:
+                    return Size.ToString() + " Root Beer Jerked Soda";
+                default:
+                    return "Invalid Flaor";
+            }
+            
         }
     }
 }

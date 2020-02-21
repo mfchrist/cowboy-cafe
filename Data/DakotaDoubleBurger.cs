@@ -106,6 +106,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Overiden ToString() method to return correct order information
+        /// </summary>
         public override string ToString()
         {
             return "Dakota Double Burger";

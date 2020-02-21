@@ -21,10 +21,12 @@ namespace PointOfSale
     {
         public OrderControl()
         {
-            //Initialize all buttons with an event handler.
+            // <summary>
+            // Initialize all buttons with an event handler.
+            // </summary>
             InitializeComponent();
-            //AddAngryChickenButton.Height = 40;
-            //entrees
+            
+            // Entrees
             AddCowpokeChili.Click += AddCowpokeChili_Click;
             AddRustlerRibs.Click += AddRustlerRibs_Click;
             AddPecosPulledPork.Click += AddPecosPulledPork_Click;
@@ -32,18 +34,25 @@ namespace PointOfSale
             AddDakotaDoubleBurger.Click += AddDakotaDoubleBurger_Click;
             AddTexasTripleBurger.Click += AddTexasTripleBurger_Click;
             AddAngryChickenButton.Click += AddAngryChicken_Click;
-            //sides
+            
+            // Sides
             AddChiliCheeseFries.Click += AddChiliCheeseFries_Click;
             AddCornDodgers.Click += AddCornDodgers_Click;
             AddPanDeCampo.Click += AddPanDeCampo_Click;
             AddBakedBeans.Click += AddBakedBeans_Click;
-            //drinks
+            
+            // Drinks
             AddJerkedSoda.Click += AddJerkedSoda_Click;
             AddTexasTea.Click += AddTexasTea_Click;
             AddCowboyCoffe.Click += AddCowboyCoffe_Click;
             AddWater.Click += AddWater_Click;
         }
 
+        /// <summary>
+        /// All the functionality for the event handlers declared above is created in the code below.
+        /// </summary>
+        
+        /// Drinks
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
             OrderList.Items.Add(new Water());
@@ -64,6 +73,7 @@ namespace PointOfSale
             OrderList.Items.Add(new JerkedSoda());
         }
 
+        /// Sides
         private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
         {
             OrderList.Items.Add(new BakedBeans());
@@ -84,6 +94,7 @@ namespace PointOfSale
             OrderList.Items.Add(new ChiliCheeseFries());
         }
 
+        /// Entrees
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
             OrderList.Items.Add(new DakotaDoubleBurger());

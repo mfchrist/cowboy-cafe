@@ -7,24 +7,28 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <!-- Set default size for buttons -->
         <Style TargetType="Button">
             <Setter Property="Height" Value="50"/>
         </Style>
     </UserControl.Resources>
     <Grid>
+        <!-- Create column divisions -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
 
+        <!-- Create row divisions -->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition>
                 
             </RowDefinition>
         </Grid.RowDefinitions>
-        
+
+        <!-- Create column of buttons for entrees -->
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
 
@@ -50,7 +54,8 @@
                 Angry Chicken
             </Button>
         </StackPanel>
-        
+
+        <!-- Create column of buttons for sides -->
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center">Sides</TextBlock>
 
@@ -67,7 +72,8 @@
                 Baked Beans
             </Button>
         </StackPanel>
-               
+
+        <!-- Create column of buttons for drinks -->
         <StackPanel Grid.Column="2">
             <TextBlock TextAlignment="Center">Drinks</TextBlock>
 
@@ -84,7 +90,8 @@
                 Water
             </Button>
         </StackPanel>
-        
+
+        <!-- Create column in which the order will appear -->
         <StackPanel Grid.Column="3">
             <TextBlock TextAlignment="Center">Order</TextBlock>
             <ListBox Name ="OrderList"></ListBox>
