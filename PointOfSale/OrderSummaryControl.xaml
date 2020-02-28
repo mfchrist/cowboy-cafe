@@ -5,8 +5,27 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="200">
     <Grid>
-            
+        <!--><TextBlock Text="Order" TextAlignment="Center"/>
+-->        <!-- Create coulumn divisions -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        
+        <StackPanel x:Name="Items"  Grid.Column="0">
+            <TextBlock Text="Order" TextAlignment="Center"/>
+            <ListView x:Name="OrderList"></ListView>
+            <TextBlock Text="Subtotal" TextAlignment="Center" VerticalAlignment="Bottom"/>
+        </StackPanel>
+
+        <StackPanel x:Name="Prices"  Grid.Column="1">
+            <TextBlock Text="Prices" TextAlignment="Center"/>
+            <ListView x:Name="PriceList"></ListView>
+            <TextBlock x:Name="SubtotalPrice" TextAlignment="Center" VerticalAlignment="Bottom"/>
+        </StackPanel>
     </Grid>
+    
 </UserControl>

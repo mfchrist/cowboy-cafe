@@ -30,6 +30,9 @@
 
         <!-- Create column of buttons for entrees -->
         <StackPanel Grid.Column="0">
+            <Button x:Name="ItemSelectionButton">
+                Item Selection
+            </Button>
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
 
             <Button x:Name="AddCowpokeChili">
@@ -57,6 +60,9 @@
 
         <!-- Create column of buttons for sides -->
         <StackPanel Grid.Column="1">
+            <Button x:Name="CancelOrderButton">
+                Cancel Order
+            </Button>
             <TextBlock TextAlignment="Center">Sides</TextBlock>
 
             <Button x:Name="AddChiliCheeseFries">
@@ -75,6 +81,9 @@
 
         <!-- Create column of buttons for drinks -->
         <StackPanel Grid.Column="2">
+            <Button x:Name="CompleteOrderButton">
+                Complete Order
+            </Button>
             <TextBlock TextAlignment="Center">Drinks</TextBlock>
 
             <Button x:Name="AddJerkedSoda">
@@ -93,8 +102,9 @@
 
         <!-- Create column in which the order will appear -->
         <StackPanel Grid.Column="3">
-            <TextBlock TextAlignment="Center">Order</TextBlock>
-            <ListBox Name ="OrderList"></ListBox>
+            <TextBlock TextAlignment="Center">Order #1</TextBlock>
+            <!--<ListBox Name ="OrderList"></ListBox> -->
+            <local:OrderSummaryControl  x:Name="SummaryColumn"/>
         </StackPanel>
     </Grid>
 </UserControl>

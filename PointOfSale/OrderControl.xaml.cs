@@ -25,6 +25,11 @@ namespace PointOfSale
             // Initialize all buttons with an event handler.
             // </summary>
             InitializeComponent();
+
+            // Control Buttons
+            ItemSelectionButton.Click += ItemSelectionButton_Click;
+            CancelOrderButton.Click += CancelOrderButton_Click;
+            CompleteOrderButton.Click += CompleteOrderButton_Click;
             
             // Entrees
             AddCowpokeChili.Click += AddCowpokeChili_Click;
@@ -46,88 +51,312 @@ namespace PointOfSale
             AddTexasTea.Click += AddTexasTea_Click;
             AddCowboyCoffe.Click += AddCowboyCoffe_Click;
             AddWater.Click += AddWater_Click;
+
+
+            AddCowpokeChili.IsEnabled = false;
+            AddRustlerRibs.IsEnabled = false;
+            AddPecosPulledPork.IsEnabled = false;
+            AddTrailBurger.IsEnabled = false;
+            AddDakotaDoubleBurger.IsEnabled = false;
+            AddTexasTripleBurger.IsEnabled = false;
+            AddAngryChickenButton.IsEnabled = false;
+
+            AddChiliCheeseFries.IsEnabled = false;
+            AddCornDodgers.IsEnabled = false;
+            AddPanDeCampo.IsEnabled = false;
+            AddBakedBeans.IsEnabled = false;
+
+            AddJerkedSoda.IsEnabled = false;
+            AddTexasTea.IsEnabled = false;
+            AddCowboyCoffe.IsEnabled = false;
+            AddWater.IsEnabled = false;
+
+        }
+
+        private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order();
+                               
+            AddCowpokeChili.IsEnabled = false;
+            AddRustlerRibs.IsEnabled = false;
+            AddPecosPulledPork.IsEnabled = false;
+            AddTrailBurger.IsEnabled = false;
+            AddDakotaDoubleBurger.IsEnabled = false;
+            AddTexasTripleBurger.IsEnabled = false;
+            AddAngryChickenButton.IsEnabled = false;
+
+            AddChiliCheeseFries.IsEnabled = false;
+            AddCornDodgers.IsEnabled = false;
+            AddPanDeCampo.IsEnabled = false;
+            AddBakedBeans.IsEnabled = false;
+
+            AddJerkedSoda.IsEnabled = false;
+            AddTexasTea.IsEnabled = false;
+            AddCowboyCoffe.IsEnabled = false;
+            AddWater.IsEnabled = false;
+
+            
+
+            double total = 0;
+
+            foreach(double x in SummaryColumn.PriceList.Items)
+            {
+                total += x;
+            }
+
+            SummaryColumn.SubtotalPrice.Text = total.ToString();
+
+            ItemSelectionButton.IsEnabled = true;
+            CompleteOrderButton.IsEnabled = false;
+            CancelOrderButton.IsEnabled = false;
+
+
+        }
+
+        private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            SummaryColumn.OrderList.Items.Clear();
+            SummaryColumn.PriceList.Items.Clear();
+
+            AddCowpokeChili.IsEnabled = false;
+            AddRustlerRibs.IsEnabled = false;
+            AddPecosPulledPork.IsEnabled = false;
+            AddTrailBurger.IsEnabled = false;
+            AddDakotaDoubleBurger.IsEnabled = false;
+            AddTexasTripleBurger.IsEnabled = false;
+            AddAngryChickenButton.IsEnabled = false;
+
+            AddChiliCheeseFries.IsEnabled = false;
+            AddCornDodgers.IsEnabled = false;
+            AddPanDeCampo.IsEnabled = false;
+            AddBakedBeans.IsEnabled = false;
+
+            AddJerkedSoda.IsEnabled = false;
+            AddTexasTea.IsEnabled = false;
+            AddCowboyCoffe.IsEnabled = false;
+            AddWater.IsEnabled = false;
+
+            ItemSelectionButton.IsEnabled = true;
+            CompleteOrderButton.IsEnabled = false;
+            CancelOrderButton.IsEnabled = false;
+        }
+
+        private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            SummaryColumn.OrderList.Items.Clear();
+            SummaryColumn.PriceList.Items.Clear();
+            SummaryColumn.SubtotalPrice.Text = "";
+
+            AddCowpokeChili.IsEnabled = true;
+            AddRustlerRibs.IsEnabled = true;
+            AddPecosPulledPork.IsEnabled = true;
+            AddTrailBurger.IsEnabled = true;
+            AddDakotaDoubleBurger.IsEnabled = true;
+            AddTexasTripleBurger.IsEnabled = true;
+            AddAngryChickenButton.IsEnabled = true;
+
+            AddChiliCheeseFries.IsEnabled = true;
+            AddCornDodgers.IsEnabled = true;
+            AddPanDeCampo.IsEnabled = true;
+            AddBakedBeans.IsEnabled = true;
+
+            AddJerkedSoda.IsEnabled = true;
+            AddTexasTea.IsEnabled = true;
+            AddCowboyCoffe.IsEnabled = true;
+            AddWater.IsEnabled = true;
+
+            ItemSelectionButton.IsEnabled = false;
+            CompleteOrderButton.IsEnabled = true;
+            CancelOrderButton.IsEnabled = true;
+
         }
 
         /// <summary>
         /// All the functionality for the event handlers declared above is created in the code below.
         /// </summary>
-        
+
         /// Drinks
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new Water());
+            Water temp = new Water();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach(string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddCowboyCoffe_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new CowboyCoffee());
+            CowboyCoffee temp = new CowboyCoffee();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddTexasTea_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new TexasTea());
+            TexasTea temp = new TexasTea();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new JerkedSoda());
+            JerkedSoda temp = new JerkedSoda();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         /// Sides
         private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new BakedBeans());
+            BakedBeans temp = new BakedBeans();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new PanDeCampo());
+            PanDeCampo temp = new PanDeCampo();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new CornDodgers());
+            CornDodgers temp = new CornDodgers();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new ChiliCheeseFries());
+            ChiliCheeseFries temp = new ChiliCheeseFries();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         /// Entrees
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new DakotaDoubleBurger());
+            DakotaDoubleBurger temp = new DakotaDoubleBurger();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new TrailBurger());
+            TrailBurger temp = new TrailBurger();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddRustlerRibs_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new RustlersRibs());
+            RustlersRibs temp = new RustlersRibs();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new TexasTripleBurger());
+            TexasTripleBurger temp = new TexasTripleBurger();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new PecosPulledPork());
+            PecosPulledPork temp = new PecosPulledPork();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new CowpokeChili());
+            CowpokeChili temp = new CowpokeChili();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new AngryChicken());
+            AngryChicken temp = new AngryChicken();
+            SummaryColumn.OrderList.Items.Add(temp);
+            SummaryColumn.PriceList.Items.Add(temp.Price);
+            foreach (string s in temp.SpecialInstructions)
+            {
+                SummaryColumn.OrderList.Items.Add("  " + s);
+                SummaryColumn.PriceList.Items.Add("");
+            }
         }
 
     }

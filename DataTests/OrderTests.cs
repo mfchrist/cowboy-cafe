@@ -8,7 +8,7 @@ namespace CowboyCafe.DataTests
 {
     public class OrderTests
     {
-
+        
         public class MockOrderItem : IOrderItem
         {
             public double Price { get; set; }
@@ -76,11 +76,11 @@ namespace CowboyCafe.DataTests
                 });
             }
 
-            Assert.Equal(total, order.subtotal);
+            Assert.Equal(total, order.Subtotal);
 
         }
 
-        /*
+        /*nope
         [Fact]
         public void AddingAnItemShouldTriggerPropertyChangedForPrice()
         {
@@ -91,9 +91,9 @@ namespace CowboyCafe.DataTests
                 order.Add(item);
             });
 
-        }
+        }nope
         */
-
+        
         [Theory]
         [InlineData("Price")]
         [InlineData("Items")]
@@ -110,7 +110,7 @@ namespace CowboyCafe.DataTests
         [Theory]
         [InlineData("Price")]
         [InlineData("Items")]
-        public void AddingAnItemShouldTriggerPropertyChanged(string propertyName
+        public void AddingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
             var order = new Order();
             var item = new MockOrderItem();
@@ -120,7 +120,7 @@ namespace CowboyCafe.DataTests
                 order.Remove(item);
             });
         }
-
+        
        
     }
 }
