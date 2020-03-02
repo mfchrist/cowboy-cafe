@@ -5,8 +5,91 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="400" d:DesignWidth="600">
+ 
+        <UserControl.Resources>
+            <!-- Set default size for buttons -->
+            <Style TargetType="Button">
+                <Setter Property="Height" Value="50"/>
+            </Style>
+        </UserControl.Resources>
+        <Grid>
+            <!-- Create column divisions -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                
+
+                <!-- Create row divisions -->
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition>
+
+                </RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Create column of buttons for entrees -->
+        <StackPanel Grid.Column="0">
+            <TextBlock TextAlignment="Center">Entrees</TextBlock>
+
+                <Button x:Name="AddCowpokeChili">
+                    CowpokeChili
+                </Button>
+                <Button x:Name="AddRustlerRibs">
+                    RustlersRibs
+                </Button>
+                <Button x:Name="AddPecosPulledPork" >
+                    PecosPulledPork
+                </Button>
+                <Button x:Name="AddTrailBurger">
+                    TrailBurger
+                </Button>
+                <Button x:Name="AddDakotaDoubleBurger">
+                    DakotaDoubleBurger
+                </Button>
+                <Button x:Name="AddTexasTripleBurger">
+                    TexasTripleBurger
+                </Button>
+                <Button x:Name="AddAngryChickenButton">
+                    Angry Chicken
+                </Button>
+            </StackPanel>
+
+            <!-- Create column of buttons for sides -->
+        <StackPanel Grid.Column="1">
+            <TextBlock TextAlignment="Center">Sides</TextBlock>
+
+                <Button x:Name="AddChiliCheeseFries">
+                    Chili Cheese Fries
+                </Button>
+                <Button x:Name="AddCornDodgers">
+                    Corn Dodgers
+                </Button>
+                <Button x:Name="AddPanDeCampo">
+                    Pan De Campo
+                </Button>
+                <Button x:Name="AddBakedBeans">
+                    Baked Beans
+                </Button>
+            </StackPanel>
+
+            <!-- Create column of buttons for drinks -->
+        <StackPanel Grid.Column="2">
+            <TextBlock TextAlignment="Center">Drinks</TextBlock>
+
+                <Button x:Name="AddJerkedSoda">
+                    Jerked Soda
+                </Button>
+                <Button x:Name="AddTexasTea">
+                    Texas Tea
+                </Button>
+                <Button x:Name="AddCowboyCoffe">
+                    Cowboy Coffee
+                </Button>
+                <Button x:Name="AddWater">
+                    Water
+                </Button>
+            </StackPanel>
+        </Grid>
 </UserControl>
