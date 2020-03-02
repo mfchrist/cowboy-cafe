@@ -20,22 +20,22 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
 
-        <!-- Create row divisions -->
+            <!-- Create row divisions -->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50">
-                
+
             </RowDefinition>
         </Grid.RowDefinitions>
 
-        
+
 
         <!-- Create column of buttons for entrees -->
         <StackPanel Grid.Column="0">
             <Button x:Name="ItemSelectionButton">
                 Item Selection
             </Button>
-            
+
 
         </StackPanel>
 
@@ -44,9 +44,9 @@
             <Button x:Name="CancelOrderButton">
                 Cancel Order
             </Button>
-            
 
-            
+
+
         </StackPanel>
 
         <!-- Create column of buttons for drinks -->
@@ -54,21 +54,23 @@
             <Button x:Name="CompleteOrderButton">
                 Complete Order
             </Button>
-            
+
         </StackPanel>
 
-        
+
 
         <!-- Create column in which the order will appear -->
         <StackPanel Grid.Column="3">
             <TextBlock TextAlignment="Center">Order #1</TextBlock>
             <!--<ListBox Name ="OrderList"></ListBox> -->
-            <local:OrderSummaryControl  x:Name="SummaryColumn"/>
+            <local:OrderSummaryControl x:Name="SummaryColumn"/>
+
         </StackPanel>
 
-        <Grid Height="400" Width="600">
-            <local:MenuItemSelectionControl  x:Name="OrderButtons" Margin="0,53,0,-53"/>
-        </Grid>
+
+        <local:MenuItemSelectionControl x:Name="OrderButtons" Height="395" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Margin="0,0,10,-400" />
+
 
     </Grid>
+
 </UserControl>

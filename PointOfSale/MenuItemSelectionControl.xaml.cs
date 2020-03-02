@@ -59,7 +59,7 @@ namespace PointOfSale
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
             Water temp = new Water();
-            SummaryColumn.OrderList.Items.Add(temp);
+            OrderList.Items.Add(temp);
             SummaryColumn.PriceList.Items.Add(temp.Price);
             foreach (string s in temp.SpecialInstructions)
             {
