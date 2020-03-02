@@ -96,6 +96,7 @@ namespace PointOfSale
 
         private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
         {
+            this.DataContext = new Order();
             /*
             SummaryColumn.OrderList.Items.Clear();
             SummaryColumn.PriceList.Items.Clear();
