@@ -59,48 +59,36 @@ namespace PointOfSale
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
             Water temp = new Water();
-            OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if(DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddCowboyCoffe_Click(object sender, RoutedEventArgs e)
         {
             CowboyCoffee temp = new CowboyCoffee();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddTexasTea_Click(object sender, RoutedEventArgs e)
         {
             TexasTea temp = new TexasTea();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
         {
             JerkedSoda temp = new JerkedSoda();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
@@ -108,48 +96,36 @@ namespace PointOfSale
         private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
         {
             BakedBeans temp = new BakedBeans();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
         {
             PanDeCampo temp = new PanDeCampo();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
         {
             CornDodgers temp = new CornDodgers();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
         {
             ChiliCheeseFries temp = new ChiliCheeseFries();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
@@ -157,84 +133,63 @@ namespace PointOfSale
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
             DakotaDoubleBurger temp = new DakotaDoubleBurger();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
             TrailBurger temp = new TrailBurger();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddRustlerRibs_Click(object sender, RoutedEventArgs e)
         {
             RustlersRibs temp = new RustlersRibs();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
             TexasTripleBurger temp = new TexasTripleBurger();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
             PecosPulledPork temp = new PecosPulledPork();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
             CowpokeChili temp = new CowpokeChili();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
 
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
         {
             AngryChicken temp = new AngryChicken();
-            SummaryColumn.OrderList.Items.Add(temp);
-            SummaryColumn.PriceList.Items.Add(temp.Price);
-            foreach (string s in temp.SpecialInstructions)
+            if (DataContext is Order order)
             {
-                SummaryColumn.OrderList.Items.Add("  " + s);
-                SummaryColumn.PriceList.Items.Add("");
+                order.Add(temp);
             }
         }
     }

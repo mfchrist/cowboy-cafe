@@ -24,8 +24,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50">
-
             </RowDefinition>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
 
@@ -60,10 +60,9 @@
 
 
         <!-- Create column in which the order will appear -->
-        <StackPanel Grid.Column="3">
-            <TextBlock TextAlignment="Center">Order #1</TextBlock>
+        <StackPanel Grid.Column="3" Grid.RowSpan="2">
             <!--<ListBox Name ="OrderList"></ListBox> -->
-            <local:OrderSummaryControl x:Name="SummaryColumn"/>
+            <local:OrderSummaryControl x:Name="SummaryColumn" />
 
         </StackPanel>
 
