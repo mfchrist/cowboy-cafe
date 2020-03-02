@@ -53,7 +53,14 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the side
         /// </summary>
-        public override List<string> SpecialInstructions { get; }
+        public override List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+                return instructions;
+            }
+        }
 
         /// <summary>
         /// Overiden ToString() method to return correct order information
