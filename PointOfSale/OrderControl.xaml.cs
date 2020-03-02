@@ -31,129 +31,35 @@ namespace PointOfSale
             CancelOrderButton.Click += CancelOrderButton_Click;
             CompleteOrderButton.Click += CompleteOrderButton_Click;
 
+            // Create new order
             DataContext = new Order();
 
-            /*
-            AddCowpokeChili.IsEnabled = false;
-            AddRustlerRibs.IsEnabled = false;
-            AddPecosPulledPork.IsEnabled = false;
-            AddTrailBurger.IsEnabled = false;
-            AddDakotaDoubleBurger.IsEnabled = false;
-            AddTexasTripleBurger.IsEnabled = false;
-            AddAngryChickenButton.IsEnabled = false;
-
-            AddChiliCheeseFries.IsEnabled = false;
-            AddCornDodgers.IsEnabled = false;
-            AddPanDeCampo.IsEnabled = false;
-            AddBakedBeans.IsEnabled = false;
-
-            AddJerkedSoda.IsEnabled = false;
-            AddTexasTea.IsEnabled = false;
-            AddCowboyCoffe.IsEnabled = false;
-            AddWater.IsEnabled = false;
-            */
         }
 
+        // <summary>
+        // Complete current order.
+        // </summary>
         private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
-            /*           
-            AddCowpokeChili.IsEnabled = false;
-            AddRustlerRibs.IsEnabled = false;
-            AddPecosPulledPork.IsEnabled = false;
-            AddTrailBurger.IsEnabled = false;
-            AddDakotaDoubleBurger.IsEnabled = false;
-            AddTexasTripleBurger.IsEnabled = false;
-            AddAngryChickenButton.IsEnabled = false;
-
-            AddChiliCheeseFries.IsEnabled = false;
-            AddCornDodgers.IsEnabled = false;
-            AddPanDeCampo.IsEnabled = false;
-            AddBakedBeans.IsEnabled = false;
-
-            AddJerkedSoda.IsEnabled = false;
-            AddTexasTea.IsEnabled = false;
-            AddCowboyCoffe.IsEnabled = false;
-            AddWater.IsEnabled = false;
-            
-            
-
-            double total = 0;
-
-            foreach(double x in SummaryColumn.PriceList.Items)
-            {
-                total += x;
-            }
            
-            SummaryColumn.SubtotalPrice.Text = total.ToString();
-
-            ItemSelectionButton.IsEnabled = true;
-            CompleteOrderButton.IsEnabled = false;
-            CancelOrderButton.IsEnabled = false;
-             */
 
         }
 
+        // <summary>
+        // Cancel current order.
+        // </summary>
         private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
-            /*
-            SummaryColumn.OrderList.Items.Clear();
-            SummaryColumn.PriceList.Items.Clear();
-            
-            AddCowpokeChili.IsEnabled = false;
-            AddRustlerRibs.IsEnabled = false;
-            AddPecosPulledPork.IsEnabled = false;
-            AddTrailBurger.IsEnabled = false;
-            AddDakotaDoubleBurger.IsEnabled = false;
-            AddTexasTripleBurger.IsEnabled = false;
-            AddAngryChickenButton.IsEnabled = false;
-
-            AddChiliCheeseFries.IsEnabled = false;
-            AddCornDodgers.IsEnabled = false;
-            AddPanDeCampo.IsEnabled = false;
-            AddBakedBeans.IsEnabled = false;
-
-            AddJerkedSoda.IsEnabled = false;
-            AddTexasTea.IsEnabled = false;
-            AddCowboyCoffe.IsEnabled = false;
-            AddWater.IsEnabled = false;
-
-            ItemSelectionButton.IsEnabled = true;
-            CompleteOrderButton.IsEnabled = false;
-            CancelOrderButton.IsEnabled = false;
-            */
+                     
         }
-
+        // <summary>
+        // Begin item selection.
+        // </summary>
         private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            SummaryColumn.OrderList.Items.Clear();
-            SummaryColumn.PriceList.Items.Clear();
-            SummaryColumn.SubtotalPrice.Text = "";
             
-            AddCowpokeChili.IsEnabled = true;
-            AddRustlerRibs.IsEnabled = true;
-            AddPecosPulledPork.IsEnabled = true;
-            AddTrailBurger.IsEnabled = true;
-            AddDakotaDoubleBurger.IsEnabled = true;
-            AddTexasTripleBurger.IsEnabled = true;
-            AddAngryChickenButton.IsEnabled = true;
-
-            AddChiliCheeseFries.IsEnabled = true;
-            AddCornDodgers.IsEnabled = true;
-            AddPanDeCampo.IsEnabled = true;
-            AddBakedBeans.IsEnabled = true;
-
-            AddJerkedSoda.IsEnabled = true;
-            AddTexasTea.IsEnabled = true;
-            AddCowboyCoffe.IsEnabled = true;
-            AddWater.IsEnabled = true;
-
-            ItemSelectionButton.IsEnabled = false;
-            CompleteOrderButton.IsEnabled = true;
-            CancelOrderButton.IsEnabled = true;
-            */
         }
 
 
