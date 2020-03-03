@@ -35,8 +35,6 @@
             <Button x:Name="ItemSelectionButton">
                 Item Selection
             </Button>
-
-
         </StackPanel>
 
         <!-- Create column of buttons for sides -->
@@ -44,9 +42,6 @@
             <Button x:Name="CancelOrderButton">
                 Cancel Order
             </Button>
-
-
-
         </StackPanel>
 
         <!-- Create column of buttons for drinks -->
@@ -62,7 +57,7 @@
         <!-- Create column in which the order will appear -->
         <local:OrderSummaryControl x:Name="SummaryColumn" Grid.Column="3" Grid.RowSpan="2"/>
 
-
+        <!--Menu item buttons-->
         <local:MenuItemSelectionControl x:Name="OrderButtons" Height="395" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Margin="0,0,10,-400" />
 
 

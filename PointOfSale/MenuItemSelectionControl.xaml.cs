@@ -56,6 +56,10 @@ namespace PointOfSale
         /// </summary>
 
         /// Drinks
+
+        /// <summary>
+        /// Add water button event handler
+        /// </summary>
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
             Water temp = new Water();
@@ -65,6 +69,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add coffee button event handler
+        /// </summary>
         private void AddCowboyCoffe_Click(object sender, RoutedEventArgs e)
         {
             CowboyCoffee temp = new CowboyCoffee();
@@ -74,6 +81,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add tea button event handler
+        /// </summary>
         private void AddTexasTea_Click(object sender, RoutedEventArgs e)
         {
             TexasTea temp = new TexasTea();
@@ -83,6 +93,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add soda button event handler
+        /// </summary>
         private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
         {
             JerkedSoda temp = new JerkedSoda();
@@ -93,6 +106,10 @@ namespace PointOfSale
         }
 
         /// Sides
+        
+        /// <summary>
+        /// Add beans button event handler
+        /// </summary>
         private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
         {
             BakedBeans temp = new BakedBeans();
@@ -102,6 +119,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add pan de campo button event handler
+        /// </summary>
         private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
         {
             PanDeCampo temp = new PanDeCampo();
@@ -111,6 +131,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add corn dodgers button event handler
+        /// </summary>
         private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
         {
             CornDodgers temp = new CornDodgers();
@@ -120,6 +143,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add chili button event handler
+        /// </summary>
         private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
         {
             ChiliCheeseFries temp = new ChiliCheeseFries();
@@ -130,6 +156,10 @@ namespace PointOfSale
         }
 
         /// Entrees
+
+        /// <summary>
+        /// Add double burger button event handler
+        /// </summary>
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
             DakotaDoubleBurger temp = new DakotaDoubleBurger();
@@ -139,6 +169,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add trailburger button event handler
+        /// </summary>
         private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
             TrailBurger temp = new TrailBurger();
@@ -148,6 +181,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add ribs button event handler
+        /// </summary>
         private void AddRustlerRibs_Click(object sender, RoutedEventArgs e)
         {
             RustlersRibs temp = new RustlersRibs();
@@ -157,6 +193,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add triple burger button event handler
+        /// </summary>
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
             TexasTripleBurger temp = new TexasTripleBurger();
@@ -166,6 +205,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add pulled pork button event handler
+        /// </summary>
         private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
             PecosPulledPork temp = new PecosPulledPork();
@@ -175,6 +217,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add chili button event handler
+        /// </summary>
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
             CowpokeChili temp = new CowpokeChili();
@@ -184,6 +229,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Add chicken button event handler
+        /// </summary>
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
         {
             AngryChicken temp = new AngryChicken();
