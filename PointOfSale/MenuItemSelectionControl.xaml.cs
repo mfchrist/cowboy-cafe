@@ -11,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PointOfSale.CustomizationScreens;
+using CowboyCafe.PointOfSale.ExtensionMethods;
 
 namespace PointOfSale
 {
@@ -222,10 +224,16 @@ namespace PointOfSale
         /// </summary>
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             CowpokeChili temp = new CowpokeChili();
             if (DataContext is Order order)
             {
+                var screen = new CowpokeChiliCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+                
             }
         }
 

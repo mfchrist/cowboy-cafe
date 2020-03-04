@@ -59,7 +59,12 @@ namespace PointOfSale
         // </summary>
         private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            Container.Child = new MenuItemSelectionControl();
+        }
+
+        public void SwapScreen(FrameworkElement element)
+        {
+            Container.Child = element;
         }
 
 

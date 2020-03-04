@@ -56,10 +56,10 @@
 
         <!-- Create column in which the order will appear -->
         <local:OrderSummaryControl x:Name="SummaryColumn" Grid.Column="3" Grid.RowSpan="2"/>
-
+        <Border Name="Container" Grid.ColumnSpan="3" Grid.Row="1">
         <!--Menu item buttons-->
-        <local:MenuItemSelectionControl x:Name="OrderButtons" Height="395" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Margin="0,0,10,-400" />
-
+            <local:MenuItemSelectionControl x:Name="OrderButtons"  />
+        </Border>
 
     </Grid>
 
