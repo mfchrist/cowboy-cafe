@@ -64,10 +64,16 @@ namespace PointOfSale
         /// </summary>
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             Water temp = new Water();
-            if(DataContext is Order order)
+            if (DataContext is Order order)
             {
+                var screen = new WaterCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -76,10 +82,16 @@ namespace PointOfSale
         /// </summary>
         private void AddCowboyCoffe_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             CowboyCoffee temp = new CowboyCoffee();
             if (DataContext is Order order)
             {
+                var screen = new CowboyCoffeeCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -88,10 +100,16 @@ namespace PointOfSale
         /// </summary>
         private void AddTexasTea_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             TexasTea temp = new TexasTea();
             if (DataContext is Order order)
             {
+                var screen = new TexasTeaCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -100,10 +118,16 @@ namespace PointOfSale
         /// </summary>
         private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             JerkedSoda temp = new JerkedSoda();
             if (DataContext is Order order)
             {
+                var screen = new JerkedSodaCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 

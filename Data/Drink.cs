@@ -27,7 +27,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets or sets if the drink has ice. True by default.
         /// </summary>
-        public bool Ice { get; set; } = true;
+        // public bool Ice { get; set; } = true;
 
         /// <summary>
         /// Gets the special instructions of the drink

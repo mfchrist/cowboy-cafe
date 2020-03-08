@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class CowboyCoffee : Drink
+    public class CowboyCoffee : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Property changed event
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets or sets if the drink has ice. False by default.
         /// </summary>
@@ -17,12 +23,50 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Determines if coffee has room for cream, false by default.
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        private bool roomForCream = false;
+        public bool RoomForCream
+        {
+            get { return roomForCream; }
+            set
+            {
+                roomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
+        }
 
         /// <summary>
         /// Determines if coffee is decaf, false by default.
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        private bool decaf = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets if the drink has ice. True by default.
+        /// </summary>
+        private bool ice = true;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
+        }
 
         /// <summary>
         /// Sets the calories of the drink

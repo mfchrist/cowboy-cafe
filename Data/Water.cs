@@ -1,15 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Water : Drink
+    public class Water : Drink, INotifyPropertyChanged
     {
         /// <summary>
-        /// Determines if tea has lemon, false by default.
+        /// Property changed event
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Determines if water has lemon, false by default.
+        /// </summary>
+        private bool lemon = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets if the drink has ice. True by default.
+        /// </summary>
+        private bool ice = true;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
+        }
 
         /// <summary>
         /// Sets the price of the drink

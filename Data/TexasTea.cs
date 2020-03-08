@@ -1,20 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class TexasTea : Drink
+    public class TexasTea : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Property changed event
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Gets or sets if the drink has ice. True by default.
+        /// </summary>
+        private bool ice = true;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
+        }
+
         /// <summary>
         /// Determines if tea is sweet, true by default.
         /// </summary>
-        public bool Sweet { get; set; } = true;
+        private bool sweet = true;
+        public bool Sweet
+        {
+            get { return sweet; }
+            set
+            {
+                sweet = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
+        }
 
         /// <summary>
         /// Determines if tea has lemon, false by default.
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        private bool lemon = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
+        }
 
         /// <summary>
         /// Sets the calories of the drink
@@ -88,7 +132,7 @@ namespace CowboyCafe.Data
                 var instructions = new List<string>();
 
                 if (!Ice) instructions.Add("Hold Ice");
-                if (Lemon) instructions.Add("Add Lemon");
+                if (Lemon) instructions.Add("Add Lemon");             
 
                 return instructions;
             }
