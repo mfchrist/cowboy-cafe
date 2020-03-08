@@ -164,10 +164,16 @@ namespace PointOfSale
         /// </summary>
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             DakotaDoubleBurger temp = new DakotaDoubleBurger();
             if (DataContext is Order order)
             {
+                var screen = new DakotaDoubleBurgerCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -176,10 +182,16 @@ namespace PointOfSale
         /// </summary>
         private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             TrailBurger temp = new TrailBurger();
             if (DataContext is Order order)
             {
+                var screen = new TrailBurgerCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -188,10 +200,16 @@ namespace PointOfSale
         /// </summary>
         private void AddRustlerRibs_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             RustlersRibs temp = new RustlersRibs();
             if (DataContext is Order order)
             {
+                var screen = new RustlersRibsCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -200,10 +218,16 @@ namespace PointOfSale
         /// </summary>
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             TexasTripleBurger temp = new TexasTripleBurger();
             if (DataContext is Order order)
             {
+                var screen = new TexasTripleBurgerCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -212,10 +236,16 @@ namespace PointOfSale
         /// </summary>
         private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             PecosPulledPork temp = new PecosPulledPork();
             if (DataContext is Order order)
             {
+                var screen = new PecosPulledPorkCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -241,11 +271,17 @@ namespace PointOfSale
         /// Add chicken button event handler
         /// </summary>
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
-        {
+        {           
+            var orderControl = this.FindAncestor<OrderControl>();
+
             AngryChicken temp = new AngryChicken();
             if (DataContext is Order order)
             {
+                var screen = new AngryChickenCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
     }
