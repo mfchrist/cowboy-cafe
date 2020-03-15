@@ -22,12 +22,57 @@ namespace CowboyCafe.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 
             }
-        }
+        }        
 
         /// <summary>
         /// Property changed event
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public bool isSmall = true;
+        public bool IsSmall
+        {
+            get
+            {
+                return isSmall;
+            }
+            set
+            {
+                Size = Size.Small;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+
+            }
+        }
+
+        public bool isMedium = false;
+        public bool IsMedium
+        {
+            get
+            {
+                return isMedium;
+            }
+            set
+            {
+                Size = Size.Medium;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+
+            }
+        }
+
+        public bool isLarge = false;
+        public bool IsLarge
+        {
+            get
+            {
+                return isLarge;
+            }
+            set
+            {
+                Size = Size.Large;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+
+            }
+        }
 
         /// <summary>
         /// Sets or gets soda flavor
@@ -110,9 +155,11 @@ namespace CowboyCafe.Data
                 case SodaFlavor.RootBeer:
                     return Size.ToString() + " Root Beer Jerked Soda";
                 default:
-                    return "Invalid Flaor";
+                    return "Invalid Flavor";
             }
             
         }
+
+        
     }
 }

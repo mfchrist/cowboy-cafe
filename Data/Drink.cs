@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace CowboyCafe.Data
 {
@@ -9,10 +11,11 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Drink : IOrderItem
     {
+
         /// <summary>
         /// Gets or sets the size of the drink. Small by default.
         /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        public Size Size { get; set; } = Size.Small;        
 
         /// <summary>
         /// Gets the price of the drink
