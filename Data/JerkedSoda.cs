@@ -29,6 +29,9 @@ namespace CowboyCafe.Data
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Boolean that is bound to the user control. Allows user to make the item small.
+        /// </summary>
         public bool isSmall = true;
         public bool IsSmall
         {
@@ -44,6 +47,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Boolean that is bound to the user control. Allows user to make the item medium.
+        /// </summary>
         public bool isMedium = false;
         public bool IsMedium
         {
@@ -59,6 +65,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Boolean that is bound to the user control. Allows user to make the item large.
+        /// </summary>
         public bool isLarge = false;
         public bool IsLarge
         {
@@ -78,6 +87,96 @@ namespace CowboyCafe.Data
         /// Sets or gets soda flavor
         /// </summary>
         public SodaFlavor Flavor { get; set; }
+
+        /// <summary>
+        /// Boolean that is bound to the user control. Allows user to make the soda a cream soda.
+        /// </summary>
+        public bool isCreamSoda = true;
+        public bool IsCreamSoda
+        {
+            get
+            {
+                return isCreamSoda;
+            }
+            set
+            {
+                Flavor = SodaFlavor.CreamSoda;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+
+            }
+        }
+
+        /// <summary>
+        /// Boolean that is bound to the user control. Allows user to make the soda a orange soda.
+        /// </summary>
+        public bool isOrangeSoda = false;
+        public bool IsOrangeSoda
+        {
+            get
+            {
+                return isOrangeSoda;
+            }
+            set
+            {
+                Flavor = SodaFlavor.OrangeSoda;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+
+            }
+        }
+
+        /// <summary>
+        /// Boolean that is bound to the user control. Allows user to make the soda to be sarsparilla flavor.
+        /// </summary>
+        public bool isSasparilla = false;
+        public bool IsSasparilla
+        {
+            get
+            {
+                return isSasparilla;
+            }
+            set
+            {
+                Flavor = SodaFlavor.Sarsparilla;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+
+            }
+        }
+
+        /// <summary>
+        /// Boolean that is bound to the user control. Allows user to make the soda to be birch beer flavor.
+        /// </summary>
+        public bool isBirchBeer = false;
+        public bool IsBirchBeer
+        {
+            get
+            {
+                return isBirchBeer;
+            }
+            set
+            {
+                Flavor = SodaFlavor.BirchBeer;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+
+            }
+        }
+
+        /// <summary>
+        /// Boolean that is bound to the user control. Allows user to make the soda to be root beer flavor.
+        /// </summary>
+        public bool isRootBeer = false;
+        public bool IsRootBeer
+        {
+            get
+            {
+                return isRootBeer;
+            }
+            set
+            {
+                Flavor = SodaFlavor.RootBeer;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+
+            }
+        }
 
         /// <summary>
         /// Sets the calories of the drink

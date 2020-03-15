@@ -138,10 +138,16 @@ namespace PointOfSale
         /// </summary>
         private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             BakedBeans temp = new BakedBeans();
             if (DataContext is Order order)
             {
+                var screen = new BakedBeansCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -150,10 +156,16 @@ namespace PointOfSale
         /// </summary>
         private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             PanDeCampo temp = new PanDeCampo();
             if (DataContext is Order order)
             {
+                var screen = new PanDeCampoCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -162,10 +174,16 @@ namespace PointOfSale
         /// </summary>
         private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             CornDodgers temp = new CornDodgers();
             if (DataContext is Order order)
             {
+                var screen = new CornDodgersCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 
@@ -174,10 +192,16 @@ namespace PointOfSale
         /// </summary>
         private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             ChiliCheeseFries temp = new ChiliCheeseFries();
             if (DataContext is Order order)
             {
+                var screen = new ChiliCheeseFriesCustomization();
+                screen.DataContext = temp;
                 order.Add(temp);
+                orderControl?.SwapScreen(screen);
+
             }
         }
 

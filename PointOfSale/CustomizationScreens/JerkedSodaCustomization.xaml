@@ -15,12 +15,12 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
 
-            <ComboBox IsSelected="{Binding Path=Flavor}">
-                <ComboBoxItem>CreamSoda</ComboBoxItem>
-                <ComboBoxItem>OrangeSoda</ComboBoxItem>
-                <ComboBoxItem>Sarsparilla</ComboBoxItem>
-                <ComboBoxItem>BirchBeer</ComboBoxItem>
-                <ComboBoxItem>RootBeer</ComboBoxItem>
+            <ComboBox>
+                <ComboBoxItem IsSelected="{Binding Path=IsCreamSoda}">CreamSoda</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=IsOrangeSoda}">OrangeSoda</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=IsSasparilla}">Sarsparilla</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=IsBirchBeer}">BirchBeer</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=IsRootBeer}">RootBeer</ComboBoxItem>
             </ComboBox>
             <TextBlock Text="Flavor  " FontSize="20"/>
 

@@ -23,5 +23,16 @@
             <TextBlock Text="Ice" FontSize="20"/>
 
         </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+
+            <ComboBox>
+                <ComboBoxItem IsSelected="{Binding Path=IsSmall}">Small</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=IsMedium}">Medium</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=IsLarge}">Large</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Text="Size  " FontSize="20"/>
+
+        </StackPanel>
     </StackPanel>
 </UserControl>
