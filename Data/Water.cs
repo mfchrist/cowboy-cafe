@@ -43,7 +43,7 @@ namespace CowboyCafe.Data
 
             }
         }
-
+        /*
         /// <summary>
         /// Boolean that is bound to the user control. Allows user to make the item small.
         /// </summary>
@@ -97,6 +97,7 @@ namespace CowboyCafe.Data
 
             }
         }
+        */
 
         /// <summary>
         /// Sets the price of the drink
