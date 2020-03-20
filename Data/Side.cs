@@ -26,6 +26,7 @@ namespace CowboyCafe.Data
 
         public abstract List<string> SpecialInstructions { get; }
 
+        /*
         /// <summary>
         /// Boolean that is bound to the user control. Allows user to make the item small.
         /// </summary>
@@ -61,5 +62,6 @@ namespace CowboyCafe.Data
             set { if (value) this.Size = Size.Large; }
 
         }
+        */
     }
 }

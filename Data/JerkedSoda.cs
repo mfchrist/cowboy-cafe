@@ -29,7 +29,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /*
+        
         /// <summary>
         /// Boolean that is bound to the user control. Allows user to make the item small.
         /// </summary>
@@ -83,7 +83,7 @@ namespace CowboyCafe.Data
 
             }
         }
-        */
+        
 
         /// <summary>
         /// Sets or gets soda flavor
