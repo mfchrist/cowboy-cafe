@@ -27,7 +27,7 @@ namespace CowboyCafe.Data
             {
                 Size = Size.Small;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -45,7 +45,7 @@ namespace CowboyCafe.Data
             {
                 Size = Size.Medium;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -63,7 +63,7 @@ namespace CowboyCafe.Data
             {
                 Size = Size.Large;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         
