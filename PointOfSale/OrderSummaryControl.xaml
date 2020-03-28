@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="300">
+             d:DesignHeight="450" d:DesignWidth="400">
     <Grid>
         <!--><TextBlock Text="Order" TextAlignment="Center"/>
 -->        <!-- Create coulumn divisions -->
@@ -32,14 +32,14 @@
         <TextBlock Text="Prices" TextAlignment="Left" Grid.Column="1" Grid.Row="1"/>
 
         <!--List of items and prices-->
-        <ListView ItemsSource="{Binding Path=Items}" HorizontalContentAlignment="Stretch" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
+        <ListView Name="OrderList" SelectionChanged="ChangeItem" ItemsSource="{Binding Path=Items}" HorizontalContentAlignment="Stretch" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <DockPanel HorizontalAlignment="Stretch">
                             <TextBlock Text="{Binding}" Grid.Column="0" HorizontalAlignment="Left"/>
                             <TextBlock Text="{Binding Path=Price}" HorizontalAlignment="Right" TextAlignment="Right" Grid.Column="2"/>
-                            <Button Content="X" Grid.Column="3" Width="50" Height="30" HorizontalAlignment="Right"></Button>
+                            <Button Background="Red" Content="X" Click="RemoveItemButton"  Grid.Column="3" Width="50" Height="30" HorizontalAlignment="Right"></Button>
                         </DockPanel>
                         <ListView ItemsSource="{Binding Path=SpecialInstructions}"></ListView>
                     </StackPanel>
