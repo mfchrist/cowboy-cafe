@@ -108,7 +108,7 @@ namespace CowboyCafe.Data
             get { return tomato; }
             set
             {
-                cheese = value;
+                tomato = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 
@@ -124,7 +124,7 @@ namespace CowboyCafe.Data
             get { return lettuce; }
             set
             {
-                cheese = value;
+                lettuce = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 
@@ -140,7 +140,7 @@ namespace CowboyCafe.Data
             get { return mayo; }
             set
             {
-                cheese = value;
+                mayo = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 
