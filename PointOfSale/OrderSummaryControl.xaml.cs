@@ -12,6 +12,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
 using CowboyCafe.PointOfSale.ExtensionMethods;
+using PointOfSale.CustomizationScreens;
+
+
 
 namespace PointOfSale
 {
@@ -42,32 +45,24 @@ namespace PointOfSale
 
         }
 
-        void ChangeItem(object sender, SelectionChangedEventArgs args)
+        private void ChangeItem(object sender, SelectionChangedEventArgs args)
         {
-            ListBoxItem lbi = ((sender as ListBox).SelectedItem as ListBoxItem);
-            /*
-            if(lbi.GetValue() == typeof(PanDeCampo))
+            
+                        
+            if (OrderList.SelectedItem != null && OrderList.SelectedItem.ToString().Contains("Pan de Campo"))
             {
-                System.Environment.Exit(0);
+                PanDeCampo firstItem = args.AddedItems[0] as PanDeCampo;              
+                var orderControl = this.FindAncestor<OrderControl>();
+                if (DataContext is Order order1)
+                {
+                    var screen = new PanDeCampoCustomization();
+                    screen.DataContext = firstItem;                   
+                    orderControl?.SwapScreen(screen);
+                    
+                }
+                
             }
             
-            if (lbi. != null && lbi.Content.ToString().Contains("Pan de Campo"))
-            {
-                System.Environment.Exit(0);
-            }
-
-            
-            if (lbi.DataContext == typeof(PanDeCampo))
-            {
-                System.Environment.Exit(0);
-            }
-            */
-
-            if (OrderList.SelectedItem.ToString().Contains("Pan de Campo"))
-            {
-                System.Environment.Exit(0);
-            }
-
         }
 
     }
