@@ -7,15 +7,23 @@ using System.ComponentModel;
 
 namespace CowboyCafe.DataTests.PropertyChangedTests
 {
+    /// <summary>
+    /// A class containing the tests for Corn Dodgers
+    /// </summary>
     public class PecosPulledPorkPropertyChangedTests
     {
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged 
+        /// </summary>
         [Fact]
         public void PecosPulledPorkShouldImplementINotifyPropertyChanged()
         {
             var pork = new PecosPulledPork();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(pork);
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingBreadShouldInvokePropertyChangedForBread()
         {
@@ -25,7 +33,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 pork.Bread = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingBreadShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -35,7 +45,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 pork.Bread = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingPickleShouldInvokePropertyChangedForPickle()
         {
@@ -45,7 +57,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 pork.Pickle = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingPickleShouldInvokePropertyChangedForSpecialInstructions()
         {

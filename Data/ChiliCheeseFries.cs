@@ -5,6 +5,9 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Chili Cheese Fries side
+    /// </summary>
     public class ChiliCheeseFries : Side, INotifyPropertyChanged
     {
         /// <summary>

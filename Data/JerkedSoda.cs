@@ -6,6 +6,9 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Jerked Soda drink
+    /// </summary>
     public class JerkedSoda : Drink, INotifyPropertyChanged
     {
         /// <summary>

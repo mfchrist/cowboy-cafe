@@ -7,15 +7,23 @@ using System.ComponentModel;
 
 namespace CowboyCafe.DataTests.PropertyChangedTests
 {
+    /// <summary>
+    /// A class containing the tests for Texas Triple Burger
+    /// </summary>
     public class TexasTripleBurgerPropertyChangedTests
     {
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged 
+        /// </summary>
         [Fact]
         public void TexasTripleBurgerImplementINotifyPropertyChanged()
         {
             var burger = new TexasTripleBurger();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(burger);
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingBunShouldInvokePropertyChangedForBread()
         {
@@ -25,7 +33,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Bun = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingBunShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -35,7 +45,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Pickle = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingPickleShouldInvokePropertyChangedForPickle()
         {
@@ -45,7 +57,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Pickle = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingPickleShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -55,7 +69,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Pickle = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingKetchupShouldInvokePropertyChangedForKetchup()
         {
@@ -65,7 +81,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Ketchup = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingKetchupShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -75,7 +93,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Ketchup = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingMustardShouldInvokePropertyChangedForMustard()
         {
@@ -85,7 +105,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Mustard = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingMustardShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -95,7 +117,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Mustard = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingCheeseShouldInvokePropertyChangedForCheese()
         {
@@ -105,7 +129,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Cheese = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingCheeseShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -115,7 +141,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Cheese = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingTomatoShouldInvokePropertyChangedForTomato()
         {
@@ -125,7 +153,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Tomato = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingTomatoShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -135,7 +165,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Tomato = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingLettuceShouldInvokePropertyChangedForLettuce()
         {
@@ -145,7 +177,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Lettuce = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingLettuceShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -155,7 +189,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Lettuce = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingMayoShouldInvokePropertyChangedForMayo()
         {
@@ -165,7 +201,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Mayo = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingMayoShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -175,7 +213,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Mayo = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingBaconShouldInvokePropertyChangedForBacon()
         {
@@ -185,7 +225,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Bacon = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingBaconShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -195,7 +237,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Bacon = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingEggShouldInvokePropertyChangedForEgg()
         {
@@ -205,7 +249,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 burger.Egg = false;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingEggShouldInvokePropertyChangedForSpecialInstructions()
         {

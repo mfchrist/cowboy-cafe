@@ -7,15 +7,23 @@ using System.ComponentModel;
 
 namespace CowboyCafe.DataTests.PropertyChangedTests
 {
+    /// <summary>
+    /// A class containing the tests for Pan De Campo
+    /// </summary>
     public class PanDeCampoPropertyChangedTests
     {
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged 
+        /// </summary>
         [Fact]
         public void PanDeCampoShouldImplementINotifyPropertyChanged()
         {
             var side = new PanDeCampo();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(side);
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -25,7 +33,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 side.Size = Size.Medium;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForPrice()
         {
@@ -35,7 +45,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 side.Size = Size.Medium;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForCalories()
         {
@@ -45,7 +57,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 side.Size = Size.Medium;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForSize()
         {

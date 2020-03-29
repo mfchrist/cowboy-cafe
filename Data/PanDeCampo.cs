@@ -5,6 +5,9 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Pan De Campo side
+    /// </summary>
     public class PanDeCampo : Side, INotifyPropertyChanged
     {
         /// <summary>

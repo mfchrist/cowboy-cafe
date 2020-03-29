@@ -5,6 +5,9 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Cowboy Coffee Drink
+    /// </summary>
     public class CowboyCoffee : Drink, INotifyPropertyChanged
     {
         /// <summary>

@@ -7,15 +7,23 @@ using System.ComponentModel;
 
 namespace CowboyCafe.DataTests.PropertyChangedTests
 {
+    /// <summary>
+    /// A class containing the tests for Corn Dodgers
+    /// </summary>
     public class CowBoyCoffeePropertyChangedTests
     {
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged 
+        /// </summary>
         [Fact]
         public void CowBoyCoffeeShouldImplementINotifyPropertyChanged()
         {
             var drink = new CowboyCoffee();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(drink);
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingRoomForCreamShouldInvokePropertyChangedForRoomForCream()
         {
@@ -25,7 +33,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 drink.RoomForCream = true;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingRoomForCreamShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -35,7 +45,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 drink.RoomForCream = true;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingDecafShouldInvokePropertyChangedForDecaf()
         {
@@ -45,7 +57,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 drink.Decaf = true;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingDecafShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -55,7 +69,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 drink.Decaf = true;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingIceShouldInvokePropertyChangedForIce()
         {
@@ -65,7 +81,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 drink.Ice = true;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingIceShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -75,7 +93,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 drink.Ice = true;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForPrice()
         {
@@ -85,7 +105,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 drink.Size = Size.Medium;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForCalories()
         {
@@ -95,7 +117,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 drink.Size = Size.Medium;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for a certain property
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForSize()
         {

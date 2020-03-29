@@ -7,15 +7,23 @@ using System.ComponentModel;
 
 namespace CowboyCafe.DataTests.PropertyChangedTests
 {
+    /// <summary>
+    /// A class containing the tests for Baked Beans
+    /// </summary>
     public class BakedBeansPropertyChangedTests
     {
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged
+        /// </summary>
         [Fact]
         public void BakedBeansShouldImplementINotifyPropertyChanged()
         {
             var side = new BakedBeans();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(side);
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for SpecialInstructions
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForSpecialInstructions()
         {
@@ -25,7 +33,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 side.Size = Size.Medium;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for Price
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForPrice()
         {
@@ -35,7 +45,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 side.Size = Size.Medium;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for Calories
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForCalories()
         {
@@ -45,7 +57,9 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
                 side.Size = Size.Medium;
             });
         }
-
+        /// <summary>
+        /// Tests that the item implements INotifyPropertyChanged for Size
+        /// </summary>
         [Fact]
         public void ChangingSizeShouldInvokePropertyChangedForSize()
         {
