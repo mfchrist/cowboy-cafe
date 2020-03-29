@@ -12,11 +12,35 @@ namespace CowboyCafe.Data
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        
-       /// <summary>
-       /// Boolean that is bound to the user control. Allows user to make the item small.
-       /// </summary>
-       public bool isSmall = true;
+        /// <summary>
+        /// Size variable
+        /// </summary>
+        private Size size = Size.Small;
+        public override Size Size
+        {
+            get
+            {
+                return this.size;
+            }
+            set
+            {
+                this.size = value;
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsSmall"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsMedium"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsLarge"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
+        }
+
+        /// <summary>
+        /// Boolean that is bound to the user control. Allows user to make the item small.
+        /// </summary>
+        public bool isSmall = true;
        public bool IsSmall
        {
            get

@@ -13,6 +13,31 @@ namespace CowboyCafe.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// Size variable
+        /// </summary>
+        private Size size = Size.Small;
+        public override Size Size
+        {
+            get
+            {
+                return this.size;
+            }
+            set
+            {
+                this.size = value;
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsSmall"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsMedium"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsLarge"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+            }
+        }
+
+        /// <summary>
         /// Gets or sets if the drink has ice. False by default.
         /// </summary>
         public CowboyCoffee()

@@ -76,5 +76,35 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
             });
         }
 
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForPrice()
+        {
+            var drink = new TexasTea();
+            Assert.PropertyChanged(drink, "Price", () =>
+            {
+                drink.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForCalories()
+        {
+            var drink = new TexasTea();
+            Assert.PropertyChanged(drink, "Calories", () =>
+            {
+                drink.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForSize()
+        {
+            var drink = new TexasTea();
+            Assert.PropertyChanged(drink, "Size", () =>
+            {
+                drink.Size = Size.Medium;
+            });
+        }
+
     }
 }

@@ -16,7 +16,45 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(side);
         }
 
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var side = new BakedBeans();
+            Assert.PropertyChanged(side, "SpecialInstructions", () =>
+            {
+                side.Size = Size.Medium;
+            });
+        }
 
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForPrice()
+        {
+            var side = new BakedBeans();
+            Assert.PropertyChanged(side, "Price", () =>
+            {
+                side.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForCalories()
+        {
+            var side = new BakedBeans();
+            Assert.PropertyChanged(side, "Calories", () =>
+            {
+                side.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForSize()
+        {
+            var side = new BakedBeans();
+            Assert.PropertyChanged(side, "Size", () =>
+            {
+                side.Size = Size.Medium;
+            });
+        }
 
     }
 }

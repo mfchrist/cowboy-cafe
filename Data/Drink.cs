@@ -13,9 +13,9 @@ namespace CowboyCafe.Data
     {
 
         /// <summary>
-        /// Gets or sets the size of the drink. Small by default.
+        /// Gets the size of the entree
         /// </summary>
-        public Size Size { get; set; } = Size.Small;        
+        public virtual Size Size { get; set; }
 
         /// <summary>
         /// Gets the price of the drink

@@ -54,6 +54,37 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
             {
                 drink.Lemon = true;
             });
+        }     
+
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForPrice()
+        {
+            var drink = new Water();
+            Assert.PropertyChanged(drink, "Price", () =>
+            {
+                drink.Size = Size.Medium;
+            });
         }
+
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForCalories()
+        {
+            var drink = new Water();
+            Assert.PropertyChanged(drink, "Calories", () =>
+            {
+                drink.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldInvokePropertyChangedForSize()
+        {
+            var drink = new Water();
+            Assert.PropertyChanged(drink, "Size", () =>
+            {
+                drink.Size = Size.Medium;
+            });
+        }
+
     }
 }
