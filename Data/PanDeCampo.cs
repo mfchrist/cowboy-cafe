@@ -43,7 +43,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Boolean that is bound to the user control. Allows user to make the item small.
         /// </summary>
-        public bool isSmall = true;
+        public bool isSmall = false;
         public bool IsSmall
         {
             get
