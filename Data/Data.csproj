@@ -10,4 +10,10 @@
     <PackageReference Include="xunit" Version="2.4.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CashRegister">
+      <HintPath>..\PointOfSale\CashRegister.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

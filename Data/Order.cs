@@ -36,7 +36,20 @@ namespace CowboyCafe.Data
                 {
                     subtotal += item.Price;
                 }
-                return subtotal;
+                //return subtotal;
+                return Math.Round(subtotal, 2);
+            }
+        }
+
+        /// <summary>
+        /// Calculate and return price of all items in order with 16% taxes
+        /// </summary>
+        public double Total
+        {
+            get
+            {
+                return Math.Round(Subtotal * 1.16, 2);
+
             }
         }
 
@@ -80,6 +93,11 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
 
+        /// <summary>
+        /// Invoke Property Chanaged
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnItemChnaged(object sender, PropertyChangedEventArgs e)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
