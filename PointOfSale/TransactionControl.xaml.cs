@@ -64,7 +64,7 @@ namespace PointOfSale
         /// <param name="e">e</param>
         public void PayWithCash(object sender, RoutedEventArgs e)
         {
-
+            PrintReciept(false);
         }
 
         /// <summary>
@@ -90,9 +90,18 @@ namespace PointOfSale
                     printer.Print(item.ToString());
                     printer.Print("\t");
                     printer.Print(item.Price.ToString());
-                    printer.Print("\n\t");
-                    printer.Print(item.SpecialInstructions.ToString());
                     printer.Print("\n");
+                    int length = item.SpecialInstructions.Count;
+                    if (length > 0)
+                    {
+
+
+                        for (int i = 0; i < length; i++)
+                        {
+                            printer.Print("\t"+item.SpecialInstructions[i]);
+                            printer.Print("\n");
+                        }
+                    }
                 }
 
                 //price
