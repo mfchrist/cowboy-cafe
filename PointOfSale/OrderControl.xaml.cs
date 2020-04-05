@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CashRegister;
 
 namespace PointOfSale
 {
@@ -36,6 +37,8 @@ namespace PointOfSale
 
         }
 
+
+
         // <summary>
         // Complete current order.
         // </summary>
@@ -49,7 +52,7 @@ namespace PointOfSale
         // <summary>
         // Cancel current order.
         // </summary>
-        private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
+        public void CancelOrderButton_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
             Container.Child = new MenuItemSelectionControl();

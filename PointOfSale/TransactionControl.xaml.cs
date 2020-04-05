@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using CowboyCafe.Data;
 using CashRegister;
 using CowboyCafe.PointOfSale.ExtensionMethods;
+using CowboyCafe.PointOfSale;
 
 namespace PointOfSale
 {
@@ -21,6 +22,11 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// Create a cash drawer instance that will not change
+        /// </summary>
+        public static CashDrawer CowBoyCashDrawer = new CashDrawer();
+
+        /// <summary>
         /// Event handler for pay with card button
         /// </summary>
         /// <param name="sender">sender</param>
@@ -35,6 +41,11 @@ namespace PointOfSale
             if(result == ResultCode.Success)
             {
                 PrintReciept(true);
+                var orderControl = this.FindAncestor<OrderControl>();
+                FrameworkElement screen = new MenuItemSelectionControl();
+                orderControl.SwapScreen(screen);
+                orderControl.CancelOrderButton_Click(this, e);
+                      
             }
             else if(result == ResultCode.CancelledCard)
             {
@@ -63,8 +74,12 @@ namespace PointOfSale
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
         public void PayWithCash(object sender, RoutedEventArgs e)
-        {
+        {            
             PrintReciept(false);
+            var orderControl = this.FindAncestor<OrderControl>();
+            FrameworkElement screen = new MenuItemSelectionControl();
+            orderControl.SwapScreen(screen);
+            orderControl.CancelOrderButton_Click(this, e);
         }
 
         /// <summary>
