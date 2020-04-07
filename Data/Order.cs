@@ -62,27 +62,6 @@ namespace CowboyCafe.Data
         /// </summary>
         public static uint OrderNumber { get { return lastOrderNumber++; } }
 
-        public int CoinsEntered = 0;
-
-        public double AmmountToPay
-        {
-            get
-            {
-                return Total - CashEntered; 
-            }
-           
-        }
-
-        public double CashEntered
-        {
-            /* Okay, so here this is assuming that the method is within the class. */
-            /* You need an instance or a static class which the modifier like BillControl.CalculateCashEntered */
-            /* Namespace error at this point */
-            get { return CashRegisterModelView.CalculateCashEntered(); }
-        }
-
-
-
         /// <summary>
         /// Sends items to an array to be returned
         /// </summary>

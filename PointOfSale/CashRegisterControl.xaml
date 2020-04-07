@@ -23,7 +23,6 @@
 
         <TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" FontSize="30" TextAlignment="Center" >Ammount Left</TextBlock>
         <TextBlock Name="TotalValue" Text="{Binding Path=AmmountToPay}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="30" ></TextBlock>
-
         <TextBlock VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="0" FontSize="20" TextAlignment="Center">Enter Cash Recieved Below</TextBlock>
 
         <Button Click="FinalizePayment" Content="Finalize Payment" FontSize="30" Grid.Column="2" Grid.Row="0">
