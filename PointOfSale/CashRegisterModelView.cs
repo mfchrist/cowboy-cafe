@@ -253,6 +253,7 @@ namespace PointOfSale
                 if (quantity > 0) CashRegisterModelView.drawer.AddBill(Bills.Hundred, quantity);
                 else CashRegisterModelView.drawer.RemoveBill(Bills.Hundred, -quantity);
                 InvokePropertyChanged("Hundreds");
+                
 
             }
         }
@@ -266,5 +267,25 @@ namespace PointOfSale
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(denomination));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalValue"));
         }
+
+        public static double CalculateCashEntered()
+        {
+
+            //double coins = Pennies * 0.1 + Nickels * 0.05 + Dimes * 0.1 + Quarters * 0.25 + HalfDollars * 50 + Dollars * 1;
+            //double bills = Ones * 1 + Twos * 2 + Fives * 5 + Tens * 10 + Twenties * 20 + Fifties * 50 + Hundreds * 100;
+
+            double coins = drawer.Pennies * 0.1 + drawer.Nickels * 0.05 + drawer.Dimes * 0.1 + drawer.Quarters * 0.25 + drawer.HalfDollars * 50 + drawer.Dollars * 1;
+            double bills = drawer.Ones * 1 + drawer.Twos * 2 + drawer.Fives * 5 + drawer.Tens * 10 + drawer.Twenties * 20 + drawer.Fifties * 50 + drawer.Hundreds * 100;
+
+            return (coins + bills);
+
+        }
+
+        double y = CalculateCashEntered();
+
+
+
+
+
     }
 }

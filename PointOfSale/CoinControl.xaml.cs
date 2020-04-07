@@ -61,7 +61,7 @@ namespace PointOfSale
         /// <param name="sender">sender</param>
         /// <param name="e">RoutedEventArgs</param>
         public void OnIncreaseClicked(object sender, RoutedEventArgs e)
-        {
+        {           
             Quantity++;
         }
 

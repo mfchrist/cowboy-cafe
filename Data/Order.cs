@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using CowboyCafe;
+using CowboyCafe.Data;
+
 
 namespace CowboyCafe.Data
 {
@@ -10,6 +13,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public class Order : INotifyPropertyChanged
     {
+
         /// <summary>
         /// Allows orders to use the INotifyPropertyChanged interface
         /// </summary>
@@ -57,6 +61,27 @@ namespace CowboyCafe.Data
         /// Return order number for new orders
         /// </summary>
         public static uint OrderNumber { get { return lastOrderNumber++; } }
+
+        public int CoinsEntered = 0;
+
+        public double AmmountToPay
+        {
+            get
+            {
+                return Total - CashEntered; 
+            }
+           
+        }
+
+        public double CashEntered
+        {
+            /* Okay, so here this is assuming that the method is within the class. */
+            /* You need an instance or a static class which the modifier like BillControl.CalculateCashEntered */
+            /* Namespace error at this point */
+            get { return CashRegisterModelView.CalculateCashEntered(); }
+        }
+
+
 
         /// <summary>
         /// Sends items to an array to be returned

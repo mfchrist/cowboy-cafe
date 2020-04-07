@@ -26,27 +26,6 @@ namespace PointOfSale
         /// </summary>
         //public static CashDrawer CowBoyCashDrawer = new CashDrawer();
 
-        private double ammountToPay = 0;
-
-        public double AmmountToPay
-        {
-            get
-            {
-                return ammountToPay;
-            }
-
-            set
-            {
-                ammountToPay = ammountToPay - CashEntered;
-            }
-            
-        }
-
-        public double CashEntered
-        {
-            get { return 0; }
-        }
-
 
     /// <summary>
     /// Event handler for pay with card button
@@ -172,5 +151,7 @@ namespace PointOfSale
             }
             
         }
+
+
     }
 }
