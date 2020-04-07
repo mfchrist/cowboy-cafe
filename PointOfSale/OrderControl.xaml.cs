@@ -46,7 +46,8 @@ namespace PointOfSale
         {
             //this.DataContext = new Order();
             Container.Child = new TransactionControl();
-
+            ItemSelectionButton.IsEnabled = false;
+            CompleteOrderButton.IsEnabled = false;
         }
 
         // <summary>
@@ -56,6 +57,8 @@ namespace PointOfSale
         {
             this.DataContext = new Order();
             Container.Child = new MenuItemSelectionControl();
+            ItemSelectionButton.IsEnabled = true;
+            CompleteOrderButton.IsEnabled = true;
 
         }
         // <summary>
