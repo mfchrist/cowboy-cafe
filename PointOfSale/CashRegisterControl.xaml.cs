@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using CashRegister;
 using CowboyCafe.Data;
 using CowboyCafe.PointOfSale;
+using CowboyCafe.PointOfSale.ExtensionMethods;
 
 namespace PointOfSale
 {
@@ -24,6 +25,14 @@ namespace PointOfSale
         public CashRegisterControl()
         {
             InitializeComponent();
+        }
+
+        public void FinalizePayment(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            FrameworkElement screen = new MenuItemSelectionControl();
+            orderControl.SwapScreen(screen);
+            orderControl.CancelOrderButton_Click(this, e);
         }
     }
 }

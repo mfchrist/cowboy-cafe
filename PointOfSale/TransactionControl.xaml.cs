@@ -24,14 +24,36 @@ namespace PointOfSale
         /// <summary>
         /// Create a cash drawer instance that will not change
         /// </summary>
-        public static CashDrawer CowBoyCashDrawer = new CashDrawer();
+        //public static CashDrawer CowBoyCashDrawer = new CashDrawer();
 
-        /// <summary>
-        /// Event handler for pay with card button
-        /// </summary>
-        /// <param name="sender">sender</param>
-        /// <param name="e">e</param>
-        public void PayWithCard(object sender, RoutedEventArgs e)
+        private double ammountToPay = 0;
+
+        public double AmmountToPay
+        {
+            get
+            {
+                return ammountToPay;
+            }
+
+            set
+            {
+                ammountToPay = ammountToPay - CashEntered;
+            }
+            
+        }
+
+        public double CashEntered
+        {
+            get { return 0; }
+        }
+
+
+    /// <summary>
+    /// Event handler for pay with card button
+    /// </summary>
+    /// <param name="sender">sender</param>
+    /// <param name="e">e</param>
+    public void PayWithCard(object sender, RoutedEventArgs e)
         {
             CardTerminal terminal = new CardTerminal();
 
@@ -75,11 +97,18 @@ namespace PointOfSale
         /// <param name="e">e</param>
         public void PayWithCash(object sender, RoutedEventArgs e)
         {            
-            PrintReciept(false);
+            //PrintReciept(false);
+
             var orderControl = this.FindAncestor<OrderControl>();
-            FrameworkElement screen = new MenuItemSelectionControl();
+            FrameworkElement screen = new CashRegisterControl();
             orderControl.SwapScreen(screen);
-            orderControl.CancelOrderButton_Click(this, e);
+           // orderControl.CancelOrderButton_Click(this, e);
+
+            //var orderControl = this.FindAncestor<OrderControl>();
+            //FrameworkElement screen = new MenuItemSelectionControl();
+            //orderControl.SwapScreen(screen);
+            //orderControl.CancelOrderButton_Click(this, e);
+            
         }
 
         /// <summary>
@@ -119,6 +148,7 @@ namespace PointOfSale
                     }
                 }
 
+
                 //price
                 printer.Print("\n");
                 printer.Print("Subtotal: \t");
@@ -140,6 +170,7 @@ namespace PointOfSale
                 printer.Print("\n\n\n");
 
             }
+            
         }
     }
 }
