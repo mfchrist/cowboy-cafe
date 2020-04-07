@@ -28,6 +28,9 @@ namespace PointOfSale
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Initialize
+        /// </summary>
         public CashRegisterControl()
         {
             InitializeComponent();
@@ -49,7 +52,7 @@ namespace PointOfSale
         /// <summary>
         /// total currency in drawer
         /// </summary>
-        public double TotalValue => CashRegisterControl.drawer.TotalValue;
+        //public double TotalValue => CashRegisterControl.drawer.TotalValue;
 
 
         /// <summary>
@@ -304,6 +307,9 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// Calculates the ammount of money still needed to be paid.
+        /// </summary>
         public double AmmountToPay
         {
             get
@@ -321,24 +327,31 @@ namespace PointOfSale
                  you too!
                  Have a quality night. and no problem please reach out any time*/
                 if (DataContext is Order order)
-                {
-                    return order.Total - CashEntered;
+                {                   
+                    return order.Total - CashEntered;                    
                 }
                 return 0;
             }
 
-        }
+            set
+            {
+                if (DataContext is Order order)
+                {
+                    value = order.Total - CashEntered;
+                    InvokePropertyChanged("AmmountToPay");
+                }
+                InvokePropertyChanged("AmmountToPay");
+            }
 
+        }
+        
+        /// <summary>
+        /// Calculates Cash entered
+        /// </summary>
         public double CashEntered
         {
-            /* Okay, so here this is assuming that the method is within the class. */
-            /* You need an instance or a static class which the modifier like BillControl.CalculateCashEntered */
-            /* Namespace error at this point */
             get { return CashRegisterControl.CalculateCashEntered(); }
         }
-
-
-
 
     }
 }
