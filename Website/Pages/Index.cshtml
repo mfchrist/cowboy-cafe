@@ -5,24 +5,119 @@
 }
 @using CowboyCafe.Data;
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to the Cowboy Cafe</h1>
-    <p>
-        We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
-    </p>
+    <div class="text-center">
+        <h1 class="display-4">Welcome to the Cowboy Cafe</h1>
+        <p>
+            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
+        </p>
 
-    <h2>Entrees</h2>
-    <div class="menu-item">
-        @{
-            string entreeItems = null;
-            var entrees = Menu.Entrees();
-        }
+        <h2>Entrees</h2>
+        <div class="menu-item">
+            @{
+                string entreeItems = null;
+                var entrees = Menu.Entrees();
+                foreach (Entree item in entrees)
+                {
+                    entreeItems += item.ToString();
+                    entreeItems += "\n\tPrice : $";
+                    entreeItems += String.Format("{0:C}", item.Price.ToString());
+                    entreeItems += "\n\tCalories : ";
+                    entreeItems += item.Calories;
+                    entreeItems += "\n\n";
+                }
+            }
+            <pre>@entreeItems</pre>
+        </div>
+
+
+
+        <h2>Sides</h2>
+        <div class="menu-item">
+            @{
+                string sideItems = null;
+                var sides = Menu.Sides();
+                foreach (Side item in sides)
+                {
+                    item.Size = Size.Small;
+
+                    sideItems += item.ToString();
+                    sideItems += "\n\tPrice : $";
+                    sideItems += String.Format("{0:C}", item.Price.ToString());
+                    sideItems += "\n\tCalories : ";
+                    sideItems += item.Calories;
+                    sideItems += "\n\n";
+                }
+                foreach (Side item in sides)
+                {
+                    item.Size = Size.Medium;
+
+                    sideItems += item.ToString();
+                    sideItems += "\n\tPrice : $";
+                    sideItems += String.Format("{0:C}", item.Price.ToString());
+                    sideItems += "\n\tCalories : ";
+                    sideItems += item.Calories;
+                    sideItems += "\n\n";
+                }
+                foreach (Side item in sides)
+                {
+                    item.Size = Size.Large;
+
+                    sideItems += item.ToString();
+                    sideItems += "\n\tPrice : $";
+                    sideItems += String.Format("{0:C}", item.Price.ToString());
+                    sideItems += "\n\tCalories : ";
+                    sideItems += item.Calories;
+                    sideItems += "\n\n";
+                }
+            }
+            <pre>
+            @sideItems
+            </pre>
+        </div>
+
+
+        <h2>Drinks</h2>
+        <div class="menu-item">
+            @{
+                string drinkItems = null;
+                var drinks = Menu.Drinks();
+                foreach (Drink item in drinks)
+                {
+                    item.Size = Size.Small;
+
+                    drinkItems += item.ToString();
+                    drinkItems += "\n\tPrice : $";
+                    drinkItems += String.Format("{0:C}", item.Price.ToString());
+                    drinkItems += "\n\tCalories : ";
+                    drinkItems += item.Calories;
+                    drinkItems += "\n\n";
+                }
+                foreach (Drink item in drinks)
+                {
+                    item.Size = Size.Medium;
+
+                    drinkItems += item.ToString();
+                    drinkItems += "\n\tPrice : $";
+                    drinkItems += String.Format("{0:C}", item.Price.ToString());
+                    drinkItems += "\n\tCalories : ";
+                    drinkItems += item.Calories;
+                    drinkItems += "\n\n";
+                }
+                foreach (Drink item in drinks)
+                {
+                    item.Size = Size.Large;
+
+                    drinkItems += item.ToString();
+                    drinkItems += "\n\tPrice : $";
+                    drinkItems += String.Format("{0:C}", item.Price.ToString());
+                    drinkItems += "\n\tCalories : ";
+                    drinkItems += item.Calories;
+                    drinkItems += "\n\n";
+                }
+            }
+            <pre>
+            @drinkItems
+            </pre>
+        </div>
+
     </div>
-
-
-
-    <h2>Sides</h2>
-
-    <h2>Drinks</h2>
-
-</div>
