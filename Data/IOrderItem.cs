@@ -16,7 +16,11 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special Instructions variable
         /// </summary>
-        public List<string> SpecialInstructions { get; }       
-       
+        public List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Get calories for item
+        /// </summary>
+        public uint Calories { get; }
     }
 }

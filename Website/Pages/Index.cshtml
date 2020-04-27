@@ -11,7 +11,72 @@
             We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
         </p>
 
-        <h2>Entrees</h2>
+        <form id="search-funtionality">
+
+            <div id="search">
+                <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+                <input type="submit" value="Search">
+            </div>
+
+            <div id="filters">
+                <h4>Calories</h4>
+                <div>
+                    Between
+                    <input name="CaloriesMin" type="number" min="0" max="1000" step="1" placeholder="min" />
+                    and
+                    <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="min" />
+                </div>
+
+                <h4>Price</h4>
+                <div>
+                    Between
+                    <input name="PriceMin" type="number" min="0" max="15" step=".1" placeholder="min" />
+                    and
+                    <input name="PriceMax" type="number" min="0" max="15" step=".1" placeholder="min" />
+                </div>
+
+                <h4>Category</h4>
+                <div>
+                    <label>
+                        <input type="checkbox" name="Categories" value="Entrees" />
+                        Entrees
+                    </label>
+                    <label>
+                        <input type="checkbox" name="Categories" value="Sides" />
+                        Sides
+                    </label>
+                    <label>
+                        <input type="checkbox" name="Categories" value="Drinks" />
+                        Drinks
+                    </label>
+                </div>
+            </div>
+
+            <div id="results">
+                <h1>Menu Results</h1>
+
+                <ul class="menu-list">
+                    @{
+                        string menuItems = null;
+                        @foreach (IOrderItem item in @Model.Items)
+                        {
+                            menuItems += item.ToString();
+                            menuItems += "\n\tPrice : $";
+                            menuItems += String.Format("{0:C}", item.Price.ToString());
+                            menuItems += "\n\tCalories : ";
+                            menuItems += item.Calories;
+                            menuItems += "\n\n";
+                        }
+                    }
+                </ul>
+                <pre>@menuItems</pre>
+            </div>
+
+
+        </form>
+        
+
+        @*<h2>Entrees</h2>
         <div class="menu-item">
             @{
                 string entreeItems = null;
@@ -27,11 +92,11 @@
                 }
             }
             <pre>@entreeItems</pre>
-        </div>
+        </div>*@
 
 
 
-        <h2>Sides</h2>
+        @*<h2>Sides</h2>
         <div class="menu-item">
             @{
                 string sideItems = null;
@@ -73,10 +138,10 @@
             <pre>
             @sideItems
             </pre>
-        </div>
+        </div>*@
 
 
-        <h2>Drinks</h2>
+        @*<h2>Drinks</h2>
         <div class="menu-item">
             @{
                 string drinkItems = null;
@@ -118,6 +183,6 @@
             <pre>
             @drinkItems
             </pre>
-        </div>
+        </div>*@
 
     </div>
