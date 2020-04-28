@@ -274,24 +274,39 @@ namespace CowboyCafe.Data
 
         public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, string[] category)
         {
-            if (category == null) return items;
+            //if (category == null) return items;
 
-            if (category.Contains("Sides"))
+            //if (category.Contains("Sides"))
+            //{
+            //    items.Concat(Menu.Sides());
+            //}
+
+            //if (category.Contains("Entrees"))
+            //{
+            //    items.Concat(Menu.Entrees());
+            //}
+
+            //if (category.Contains("Drinks"))
+            //{
+            //    items.Concat(Menu.Drinks());
+            //}
+
+            //return items;
+
+            // If no filter is specified, just return the provided collection
+            if (items == null || category.Count() == 0) return items;
+
+            // Filter the supplied collection of movies
+            var results = new List<IOrderItem>();
+            foreach (IOrderItem item in items)
             {
-                items.Concat(Menu.Sides());
+                if (item.GetType() != null && category.Contains(category.))
+                {
+                    results.Add(item);
+                }
             }
 
-            if (category.Contains("Entrees"))
-            {
-                items.Concat(Menu.Entrees());
-            }
-
-            if (category.Contains("Drinks"))
-            {
-                items.Concat(Menu.Drinks());
-            }
-
-            return items;
+            return results;
         }
 
     }

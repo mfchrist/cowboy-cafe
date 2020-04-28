@@ -22,31 +22,31 @@
                 <h4>Calories</h4>
                 <div>
                     Between
-                    <input name="CaloriesMin" type="number" min="0" max="1000" step="1" placeholder="min" />
+                    <input name="CaloriesMin" type="number" min="0" max="1000" step="1" placeholder="min" value="@Model.CalorieMin"/>
                     and
-                    <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="min" />
+                    <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="min" value="@Model.CalorieMax"/>
                 </div>
 
                 <h4>Price</h4>
                 <div>
                     Between
-                    <input name="PriceMin" type="number" min="0" max="15" step=".1" placeholder="min" />
+                    <input name="PriceMin" type="number" min="0" max="15" step=".1" placeholder="min" value="@Model.PriceMin"/>
                     and
-                    <input name="PriceMax" type="number" min="0" max="15" step=".1" placeholder="min" />
+                    <input name="PriceMax" type="number" min="0" max="15" step=".1" placeholder="max" value="@Model.PriceMax"/>
                 </div>
 
                 <h4>Category</h4>
                 <div>
                     <label>
-                        <input type="checkbox" name="Categories" value="Entrees" />
+                        <input type="checkbox" name="Categories" value="Entrees" checked="@Model.Categories?.Contains("Entrees")"/>
                         Entrees
                     </label>
                     <label>
-                        <input type="checkbox" name="Categories" value="Sides" />
+                        <input type="checkbox" name="Categories" value="Sides" checked="@Model.Categories?.Contains("Sides")"/>
                         Sides
                     </label>
                     <label>
-                        <input type="checkbox" name="Categories" value="Drinks" />
+                        <input type="checkbox" name="Categories" value="Drinks" checked="@Model.Categories?.Contains("Drinks")"/>
                         Drinks
                     </label>
                 </div>
