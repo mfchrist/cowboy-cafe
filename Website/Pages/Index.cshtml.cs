@@ -80,7 +80,7 @@ namespace Website.Pages
         //public void OnPost()
         //{
         //    Items = Menu.Search(SearchTerms);
-        //    Items = Menu.FilterByCalories(Items, CalorieMin, CalorieMax);
+        //    Items = Menu.FilterByCalories(Items, CalorieMin, CalorieMax); 
         //    Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);
         //    Items = Menu.FilterByCategory(Items, Categories);
         //}
