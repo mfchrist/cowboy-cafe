@@ -272,37 +272,41 @@ namespace CowboyCafe.Data
             return results;
         }
 
-        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, string[] category)
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, IEnumerable<string> categories)
         {
-            //if (category == null) return items;
-
-            //if (category.Contains("Sides"))
-            //{
-            //    items.Concat(Menu.Sides());
-            //}
-
-            //if (category.Contains("Entrees"))
-            //{
-            //    items.Concat(Menu.Entrees());
-            //}
-
-            //if (category.Contains("Drinks"))
-            //{
-            //    items.Concat(Menu.Drinks());
-            //}
-
-            //return items;
-
+            
             // If no filter is specified, just return the provided collection
-            if (items == null || category.Count() == 0) return items;
+            if (categories == null || categories.Count() == 0) return items;
 
             // Filter the supplied collection of movies
-            var results = new List<IOrderItem>();
+            List<IOrderItem> results = new List<IOrderItem>();
             foreach (IOrderItem item in items)
             {
-                if (item.GetType() != null && category.Contains(category.))
+                if (item is Entree entree)
                 {
-                    results.Add(item);
+                    if (categories.Contains("Entrees"))
+                    {
+                        results.Add(entree);
+                    }
+                    
+                }
+
+                if (item is Drink drink)
+                {
+                    if (categories.Contains("Drinks"))
+                    {
+                        results.Add(drink);
+                    }
+
+                }
+
+                if (item is Side side)
+                {
+                    if (categories.Contains("Sides"))
+                    {
+                        results.Add(side);
+                    }
+
                 }
             }
 

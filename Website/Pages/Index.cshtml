@@ -22,31 +22,31 @@
                 <h4>Calories</h4>
                 <div>
                     Between
-                    <input name="CaloriesMin" type="number" min="0" max="1000" step="1" placeholder="min" value="@Model.CalorieMin"/>
+                    <input name="CaloriesMin" type="number" min="0" max="1000" step="1" placeholder="min" value="@Model.CalorieMin" />
                     and
-                    <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="min" value="@Model.CalorieMax"/>
+                    <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="min" value="@Model.CalorieMax" />
                 </div>
 
                 <h4>Price</h4>
                 <div>
                     Between
-                    <input name="PriceMin" type="number" min="0" max="15" step=".1" placeholder="min" value="@Model.PriceMin"/>
+                    <input name="PriceMin" type="number" min="0" max="15" step=".1" placeholder="min" value="@Model.PriceMin" />
                     and
-                    <input name="PriceMax" type="number" min="0" max="15" step=".1" placeholder="max" value="@Model.PriceMax"/>
+                    <input name="PriceMax" type="number" min="0" max="15" step=".1" placeholder="max" value="@Model.PriceMax" />
                 </div>
 
                 <h4>Category</h4>
                 <div>
                     <label>
-                        <input type="checkbox" name="Categories" value="Entrees" checked="@Model.Categories?.Contains("Entrees")"/>
+                        <input type="checkbox" name="Categories" value="Entrees" checked="@Model.Categories?.Contains("Entrees")" />
                         Entrees
                     </label>
                     <label>
-                        <input type="checkbox" name="Categories" value="Sides" checked="@Model.Categories?.Contains("Sides")"/>
+                        <input type="checkbox" name="Categories" value="Sides" checked="@Model.Categories?.Contains("Sides")" />
                         Sides
                     </label>
                     <label>
-                        <input type="checkbox" name="Categories" value="Drinks" checked="@Model.Categories?.Contains("Drinks")"/>
+                        <input type="checkbox" name="Categories" value="Drinks" checked="@Model.Categories?.Contains("Drinks")" />
                         Drinks
                     </label>
                 </div>
@@ -74,8 +74,75 @@
 
 
         </form>
-        
 
+        @*<h2>Entrees</h2>
+        <div class="menu-item">
+            <ul>
+                @foreach (CowboyCafe.Data.IOrderItem item in Model.Items)
+                {
+
+                    @if (item is CowboyCafe.Data.Entree entree)
+                    {
+                        <li>
+                            <h3>@entree.ToString()</h3>
+                            <div>
+                                Price: $@entree.Price
+                            </div>
+                            <div>
+                                Calories: @entree.Calories
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+
+        </div>
+
+        <h2>Sides</h2>
+        <div class="menu-item">
+            <ul>
+                @foreach (CowboyCafe.Data.IOrderItem item in Model.Items)
+                {
+
+                    @if (item is CowboyCafe.Data.Side side)
+                    {
+                        <li>
+                            <h3>@side.ToString()</h3>
+                            <div>
+                                Price: $@side.Price
+                            </div>
+                            <div>
+                                Calories: @side.Calories
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+
+        </div>
+
+        <h2>Drinks</h2>
+        <div class="menu-item">
+            <ul>
+                @foreach (CowboyCafe.Data.IOrderItem item in Model.Items)
+                {
+
+                    @if (item is CowboyCafe.Data.Drink drink)
+                    {
+                        <li>
+                            <h3>@drink.ToString()</h3>
+                            <div>
+                                Price: $@drink.Price
+                            </div>
+                            <div>
+                                Calories: @drink.Calories
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+
+        </div>*@
         @*<h2>Entrees</h2>
         <div class="menu-item">
             @{
