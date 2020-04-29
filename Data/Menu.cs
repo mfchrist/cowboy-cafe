@@ -12,6 +12,10 @@ namespace CowboyCafe.Data
     /// </summary>
     public static class Menu
     {
+        /// <summary>
+        /// Returns all entree items
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> Entrees()
         {
             var entrees = new List<IOrderItem>();
@@ -36,6 +40,10 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// returns all sides
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> Sides()
         {
             var sides = new List<IOrderItem>();
@@ -97,6 +105,10 @@ namespace CowboyCafe.Data
             return sides;
         }
 
+        /// <summary>
+        /// returns all drinks
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
             var drinks = new List<IOrderItem>();
@@ -158,6 +170,11 @@ namespace CowboyCafe.Data
             //drinks.Add(lwater);
 
         }
+
+        /// <summary>
+        /// returns all menu items
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> CompleteMenu()
         {
             var drinks = Menu.Drinks();
@@ -183,12 +200,12 @@ namespace CowboyCafe.Data
             List<IOrderItem> results = new List<IOrderItem>();
 
             // Return all movies if there are no search terms
-            //if (terms == null) return All;
+            if (terms == null) return All;
 
             // return each movie in the database containing the terms substring
             foreach (IOrderItem item in All)
             {
-                if (/*movie.ToString != null && */item.ToString().Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                if (item.ToString().Contains(terms, StringComparison.InvariantCultureIgnoreCase))
                 {
                     results.Add(item);
                 }
@@ -197,6 +214,13 @@ namespace CowboyCafe.Data
             return results;
         }
 
+        /// <summary>
+        /// Filters search results by calories
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, int? min, int? max)
         {
             if (min == null && max == null) return items;
@@ -234,7 +258,13 @@ namespace CowboyCafe.Data
             return results;
         }
 
-
+        /// <summary>
+        /// Filters search results by price
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
         {
             if (min == null && max == null) return items;
@@ -272,6 +302,12 @@ namespace CowboyCafe.Data
             return results;
         }
 
+        /// <summary>
+        /// Filters search results by category
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="categories"></param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, IEnumerable<string> categories)
         {
             
