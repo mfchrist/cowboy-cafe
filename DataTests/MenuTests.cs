@@ -47,12 +47,6 @@ namespace CowboyCafe.DataTests
 
         //temporary tests, will fill out later
         [Fact]
-        public void MenuSidesShouldContainExpectedItems()
-        {
-            Assert.Equal("a", "a");
-        }
-
-        [Fact]
         public void MenuEntreesShouldContainExpectedItems()
         {
             Assert.Equal("a", "a");
